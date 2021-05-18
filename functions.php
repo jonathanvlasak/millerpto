@@ -14,5 +14,13 @@ function millerpto_features() {
     register_nav_menu('footerLocationOne', 'Footer Location One');
 }
 
+add_theme_support('post-thumbnails');
+set_post_thumbnail_size( 300, 175, true );
+
+
 add_action('after_setup_theme', 'millerpto_features');
+add_action('init', 'miller_post_types');
+
+
+
 ?>

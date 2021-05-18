@@ -6,18 +6,22 @@
     <div class="container px-6 mx-auto sm:px-0">
         <div class="grid gap-16 sm:grid-cols-3">
         <?php 
-        $homepagePosts = new WP_Query(array(
-            'posts_per-page' => 3
-        ));
-
-        while ($homepagePosts->have_posts()) {
-            $homepagePosts->the_post(); ?>
-            <div>
-                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                <p><?php echo wp_trim_words(get_the_content(), 18) ?></p>
-                <p class="mt-5"><a href="<?php the_permalink(); ?>" class="px-4 py-2 font-bold text-white bg-teal-800 rounded hover:bg-teal-700">Learn More</a></p>
+            $homepageAbout = new WP_Query(array(
+                'posts_per-page' => 3,
+                'post_type' => 'about',
+                'orderby' => 'post_date',
+                'order' => 'ASC',
+            
+            ));
+            while($homepageAbout->have_posts()) {
+                $homepageAbout->the_post(); ?>
+             <div>
+                <h2 class="mb-3"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <?php the_post_thumbnail();?>
+                <p class="mt-3"><?php echo wp_trim_words(get_the_content(), 18) ?></p>
+                <p class="mt-6"><a href="<?php the_permalink(); ?>" class="px-4 py-2 font-bold text-white bg-teal-800 rounded hover:bg-teal-700">Learn More</a></p>
             </div>
-            <?php } wp_reset_postdata();?>
+          <?php  } wp_reset_postdata();?>
         </div>
     </div>
 <?php get_footer(); ?>

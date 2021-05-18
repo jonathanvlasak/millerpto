@@ -22,14 +22,14 @@
     </div>
     <div class="items-center flex-grow md:flex" id="example-navbar-warning">
       <ul class="flex flex-col ml-auto list-none md:flex-row">
-            <li <?php if (is_page('about-us') or wp_get_post_parent_id(0) == 2) echo 'class="test"'?> class="nav-item">
-            <a class="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75" href="<?php echo site_url('/about-us') ?>">
+            <li <?php if (is_page('about') or wp_get_post_parent_id(0) == 2) echo 'class="test"'?> class="nav-item">
+            <a class="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75" href="<?php echo site_url('/about') ?>">
               About
             </a>
           </li>
             <li class="nav-item">
-            <a class="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75" href="<?php echo site_url('/about-us') ?>">
-              Volunteer
+            <a class="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75" href="<?php echo site_url('/involved') ?>">
+              Get Involved!
             </a>
           </li>
           <li class="nav-item">
