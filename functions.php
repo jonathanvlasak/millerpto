@@ -14,10 +14,10 @@
         }
     }
     ?>
-    <div class="flex px-8 py-32 mb-16 align-middle bg-center bg-no-repeat bg-cover hero" 
+    <div class="relative flex px-8 py-32 mb-16 align-middle bg-center bg-no-repeat bg-cover hero" 
     style="background-image:url(<?php echo $args['photo'];?>)">
         <div class="container mx-auto">
-            <h2 class="text-white"><?php echo $args['title'];?></h2>
+            <h2 class="absolute text-6xl text-white -bottom-1"><?php echo $args['title'];?></h2>
             <p class="text-white"><?php echo $args['subtitle'];?></p>
         </div>
     </div>

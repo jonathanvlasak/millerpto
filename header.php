@@ -8,6 +8,12 @@
     <title> </title>
 </head>
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="9MYdd7aM"></script>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=1854952818008205&autoLogAppEvents=1" nonce="uEt9t8JM"></script>
+
 <nav class="relative flex flex-wrap items-center justify-between py-10">
   <a href="<?php echo site_url() ?>"><img src="<?php echo get_theme_file_uri('/img/millerptologo.jpeg')?>" class="absolute top-0 z-10 p-2 bg-white rounded-lg h-36 left-10 filter drop-shadow-xl"></a>
   <div class="container flex flex-wrap items-center justify-between mx-auto">
@@ -36,8 +42,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="flex items-center px-3 py-2 text-sm font-bold leading-snug uppercase text-green-850 hover:opacity-75" href="<?php echo site_url('/events') ?>">
-              Calendar
+            <a class="flex items-center px-3 py-2 text-sm font-bold leading-snug uppercase text-green-850 hover:opacity-75" href="<?php echo site_url('/calendar') ?>">
+              Events Calendar
             </a>
           </li>
           <li class="nav-item">
@@ -46,7 +52,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="flex items-center p-2 mr-1 text-sm font-bold rounded-full bg-blue-550" href="mailto:communications@millerpto.org">
+            <a class="flex items-center p-2 ml-5 mr-3 text-sm font-bold rounded-full bg-blue-550" href="mailto:communications@millerpto.org">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="white">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg> 

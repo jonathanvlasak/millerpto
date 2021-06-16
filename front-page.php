@@ -1,6 +1,8 @@
 <?php get_header(); ?>
-    <div class="flex grid items-center justify-center h-screen mb-16 align-middle bg-top bg-no-repeat bg-cover sm:grid-cols-12 content-evenly hero" style="background-image:url(<?php echo get_theme_file_uri('/img/thankyou_orig.jpg')?>)">
-        <h2 class="px-12 py-8 text-6xl text-white sm:col-span-6 sm:col-start-1">​Welcome to the Miller Elementary PTO website!</h2>
+    <div class="flex items-center justify-center h-screen mb-16 align-middle bg-top bg-no-repeat bg-cover content-evenly hero" style="background-image:url(<?php echo get_theme_file_uri('/img/thankyou_orig.jpg')?>)">
+        <div class="container grid sm:grid-cols-12">
+            <h2 class="py-8 text-6xl text-white sm:col-span-8 filter drop-shadow-sm">​Welcome to the Miller Elementary PTO website!</h2>
+        </div>
     </div>
 <div>
     <div class="container px-6 mx-auto my-16 sm:px-0">
@@ -45,5 +47,6 @@
 </div>
         </div>
     </div>
-    
+
+
 <?php get_footer(); ?>
