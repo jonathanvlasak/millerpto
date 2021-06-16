@@ -1,22 +1,40 @@
-<?php 
-get_header(); ?>
+<?php get_header();
+    pageBanner(array(
+    'title' => 'About Miller PTO',
+    'photo' => get_theme_file_uri('/img/millerelementary.jpg')
+));
 
-<div class="flex px-8 py-32 mb-16 align-middle bg-center bg-no-repeat bg-cover hero" style="background-image:url(<?php echo get_theme_file_uri('/img/thankyou_orig.jpg')?>)">
-        <div class="container mx-auto">
-            <h2 class="text-white">​Welcome to the Miller Elementary PTO website!</h2>
-        </div>
-    </div>
+?>
+<div class="container mx-auto">
+    <div class="grid gap-10 sm:grid-cols-12">
+    <div class="sm:col-span-8 sm:col-start-1">
 <?php
 
 while(have_posts()) {
     the_post(); ?>
-    <div class="grid grid-cols-6 gap-4">
-        <div class="col-span-4 col-start-2">
-        <h2 class="text-6xl font-black font-poppins"><?php the_title();?></h2>
-        <p><?php the_content();?></p>
-        </div>
+            <article>
+                <article class="prose max-w-none"><?php the_content();?></article>
+                <p class="mt-10"><a href="<?php the_permalink();?>" class="px-3 py-2 text-white bg-teal-800">Read More</a></p>
+            </article>
+<?php } 
+    echo paginate_links();
+?>
     </div>
-<?php }
+    <div class="p-8 prose bg-white bg-gray-100 border-t-8 border-green-850 sm:col-span-4 sm:col-start-9" >
+    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('main-sidebar') ) : endif; ?>
 
+<p></p>
+<h2 class="mt-6">Important Links</h2>
+<p><a href="" class="underline">Link 1</a></p>
+<p><a href="" class="underline">Link 2</a></p>
+<p><a href="" class="underline">Link 3</a></p>
+<p><a href="" class="underline">Link 4</a></p>
+
+    
+    </div>
+    </div>
+</div>
+
+<?php
 get_footer();
 ?>
