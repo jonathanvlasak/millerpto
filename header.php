@@ -9,23 +9,21 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="9MYdd7aM"></script>
-
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=1854952818008205&autoLogAppEvents=1" nonce="uEt9t8JM"></script>
-
-<nav class="relative flex flex-wrap items-center justify-between py-10">
-  <a href="<?php echo site_url() ?>"><img src="<?php echo get_theme_file_uri('/img/millerptologo.jpeg')?>" class="absolute top-0 z-10 p-2 bg-white rounded-lg h-36 left-10 filter drop-shadow-xl"></a>
-  <div class="container flex flex-wrap items-center justify-between mx-auto">
-    <div class="relative flex justify-between w-full md:w-auto md:static md:block md:justify-start">
-      <button class="block px-3 py-1 text-xl leading-none bg-transparent border border-transparent border-solid rounded outline-none cursor-pointer md:hidden focus:outline-none" type="button">
-        <span class="relative block w-6 h-px bg-white rounded-sm"></span>
-        <span class="relative block w-6 h-px mt-1 bg-white rounded-sm"></span>
-        <span class="relative block w-6 h-px mt-1 bg-white rounded-sm"></span>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="ybNy0SLg"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+<div class="relative w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+  <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 py-10 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <div class="flex flex-row items-center justify-between p-4">
+    <a href="<?php echo site_url() ?>"><img src="<?php echo get_theme_file_uri('/img/millerptologo.jpeg')?>" class="absolute top-0 z-10 p-2 bg-white rounded-lg h-36 filter drop-shadow-xl"></a>
+      <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+        <svg fill="green" viewBox="0 0 20 20" class="w-6 h-6">
+          <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
       </button>
     </div>
-    <div class="items-center flex-grow md:flex" id="example-navbar-warning">
-      <ul class="flex flex-col ml-auto list-none md:flex-row">
+    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+    <ul class="flex flex-col ml-auto list-none md:flex-row">
             <li <?php if (is_page('about') or wp_get_post_parent_id(0) == 2) echo 'class="test"'?> class="nav-item">
             <a class="flex items-center px-3 py-2 text-sm font-bold leading-snug uppercase text-green-850 hover:opacity-75" href="<?php echo site_url('/about') ?>">
               About
@@ -65,11 +63,7 @@
               </svg> 
             </a>
           </li>
-
       </ul> 
-    <!-- <?php wp_nav_menu(array(
-        'theme_location' => 'headerMenuLocation',        
-    ));?> -->
-    </div>
+    </nav>
   </div>
-</nav>
+</div>

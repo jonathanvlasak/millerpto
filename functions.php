@@ -14,10 +14,10 @@
         }
     }
     ?>
-    <div class="relative flex px-8 py-32 mb-16 align-middle bg-center bg-no-repeat bg-cover hero" 
+    <div class="relative flex px-8 mb-16 align-middle bg-center bg-no-repeat bg-cover h-80 hero" 
     style="background-image:url(<?php echo $args['photo'];?>)">
         <div class="container mx-auto">
-            <h2 class="absolute text-6xl text-white -bottom-1"><?php echo $args['title'];?></h2>
+            <h2 class="absolute text-5xl text-white bottom-10"><?php echo $args['title'];?></h2>
             <p class="text-white"><?php echo $args['subtitle'];?></p>
         </div>
     </div>
@@ -25,7 +25,7 @@
 }
 
 function millerpto_files() {
-    wp_enqueue_script('alpine', '//cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js', NULL, '2.0', true);
+    wp_enqueue_script('alpine', '//cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js', NULL, '2.0', true);
     wp_enqueue_style('nunito', '//fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap');
     wp_enqueue_style('millerpto_styles', get_stylesheet_uri());
 }
@@ -72,8 +72,6 @@ function miller_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'miller_widgets_init' );
-
-
 add_action('after_setup_theme', 'millerpto_features');
 add_action('init', 'miller_post_types');
 
@@ -83,6 +81,5 @@ function miller_adjust_queries($query) {
         $query->set('order', 'ASC');
     }
 }
-
 add_action('pre_get_posts', 'miller_adjust_queries')
 ?>

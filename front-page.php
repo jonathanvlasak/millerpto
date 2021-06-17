@@ -1,9 +1,13 @@
 <?php get_header(); ?>
-    <div class="flex items-center justify-center h-screen mb-16 align-middle bg-top bg-no-repeat bg-cover content-evenly hero" style="background-image:url(<?php echo get_theme_file_uri('/img/thankyou_orig.jpg')?>)">
-        <div class="container grid sm:grid-cols-12">
-            <h2 class="py-8 text-6xl text-white sm:col-span-8 filter drop-shadow-sm">​Welcome to the Miller Elementary PTO website!</h2>
+        <div class="grid sm:grid-cols-12 bg-blue-550">
+            <div class="py-20 sm:col-span-12 md:col-span-6">
+                <h2 class="py-2 text-white sm:text-4xl md:text-5xl">​Welcome to the Miller Elementary PTO website!</h2>
+                <p class="mt-6"><a href="#" class="px-4 py-2 font-bold text-white rounded bg-green-850 hover:bg-green-700">Learn More</a></p>
+            </div>
+            <div class="bg-top bg-no-repeat bg-cover sm:col-span-12 md:col-span-6" style="background-image:url(<?php echo get_theme_file_uri('/img/thankyou_orig.jpg')?>)">
+            </div>
+
         </div>
-    </div>
 <div>
     <div class="container px-6 mx-auto my-16 sm:px-0">
         <div class="grid gap-10 sm:grid-cols-12">
@@ -32,21 +36,19 @@
             ));
             while($homepageAbout->have_posts()) {
                 $homepageAbout->the_post(); ?>
-             <div class="p-8 bg-white bg-gray-100 border-t-8 border-green-850">
+             <div class="p-8 bg-gray-100 border-t-8 border-green-850">
                 <h2 class="mb-3"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 <?php the_post_thumbnail();?>
                 <p class="mt-3"><?php echo wp_trim_words(get_the_content(), 50) ?></p>
                 <p class="mt-6"><a href="<?php the_permalink(); ?>" class="px-4 py-2 font-bold text-white rounded bg-green-850 hover:bg-green-700">Learn More</a></p>
             </div>
           <?php  } wp_reset_postdata();?>
-          <div class="p-8 bg-white bg-gray-100 border-t-8 border-green-850">
+          <div class="p-8 bg-gray-100 border-t-8 border-green-850">
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('main-sidebar') ) : endif; ?>
             </div>
-            <div class="p-8 bg-white bg-gray-100 border-t-8 border-green-850">
+            <div class="p-8 bg-gray-100 border-t-8 border-green-850">
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('secondary-sidebar') ) : endif; ?>
 </div>
         </div>
     </div>
-
-
 <?php get_footer(); ?>

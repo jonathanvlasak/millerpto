@@ -20,7 +20,7 @@ while(have_posts()) {
     echo paginate_links();
 ?>
     </div>
-    <div class="p-8 prose bg-white bg-gray-100 border-t-8 border-green-850 sm:col-span-4 sm:col-start-9" >
+    <div class="p-8 prose bg-gray-100 border-t-8 border-green-850 sm:col-span-4 sm:col-start-9" >
     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('main-sidebar') ) : endif; ?>
 
 <p></p>
